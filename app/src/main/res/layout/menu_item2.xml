@@ -36,8 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/iv_menu"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:textSize="@dimen/text_medium_size"
+                android:textSize="@dimen/txt_medium"
                 android:textColor="@color/text_color"
+                android:fontFamily="serif"
                 />
 
             <TextView
@@ -49,6 +50,7 @@
                 android:layout_marginTop="@dimen/margin_extra_small"
                 android:textSize="@dimen/text_medium_size"
                 android:textColor="@color/text_color"
+                android:fontFamily="serif"
                 />
 
         </RelativeLayout>
