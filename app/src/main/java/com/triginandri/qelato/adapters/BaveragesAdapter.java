@@ -14,44 +14,45 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.triginandri.qelato.DetailActivity;
 import com.triginandri.qelato.R;
+import com.triginandri.qelato.models.Baverages;
 import com.triginandri.qelato.models.IceCream;
 
 import java.util.List;
 
-public class IceCreamAdapter extends RecyclerView.Adapter<IceCreamAdapter.MyViewHolder> {
+public class BaveragesAdapter extends RecyclerView.Adapter<BaveragesAdapter.MyViewHolder> {
 
-    public IceCreamAdapter(List<IceCream> iceCreamList) {
-        this.iceCreamList = iceCreamList;
+    public BaveragesAdapter(List<Baverages> baveragesList) {
+        this.baveragesList = baveragesList;
     }
 
-    List<IceCream> iceCreamList;
+    List<Baverages> baveragesList;
 
     @NonNull
     @Override
-    public IceCreamAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaveragesAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View iceCreamView = layoutInflater.inflate(R.layout.menu_item,null);
+        View iceCreamView = layoutInflater.inflate(R.layout.menu_item2,null);
         MyViewHolder viewHolder = new MyViewHolder(iceCreamView);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull IceCreamAdapter.MyViewHolder holder, int position) {
-        IceCream iceCream = iceCreamList.get(position);
+    public void onBindViewHolder(@NonNull BaveragesAdapter.MyViewHolder holder, int position) {
+        Baverages baverages = baveragesList.get(position);
 
-        holder.tv_name.setText(iceCream.getName());
-        holder.tv_price.setText("Rp. "+iceCream.getPrice());
-        holder.iv_menu.setImageResource(iceCream.getImage());
+        holder.tv_name.setText(baverages.getName());
+        holder.tv_price.setText("Rp. "+baverages.getPrice());
+        holder.iv_menu.setImageResource(baverages.getImage());
         holder.cv_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), DetailActivity.class);
-                i.putExtra("name", iceCream.getName());
-                i.putExtra("price", iceCream.getPrice());
-                i.putExtra("image", iceCream.getImage());
-                i.putExtra("desc", iceCream.getDescription());
+                i.putExtra("name", baverages.getName());
+                i.putExtra("price", baverages.getPrice());
+                i.putExtra("image", baverages.getImage());
+                i.putExtra("desc", baverages.getDescription());
                 view.getContext().startActivity(i);
             }
         });
@@ -59,7 +60,7 @@ public class IceCreamAdapter extends RecyclerView.Adapter<IceCreamAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return iceCreamList.size();
+        return baveragesList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

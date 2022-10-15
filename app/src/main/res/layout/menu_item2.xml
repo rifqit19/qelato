@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_extra_small"
+        android:layout_marginBottom="@dimen/margin_extra_small"
+        android:layout_marginStart="@dimen/margin_extra_small"
+        android:layout_marginEnd="@dimen/margin_extra_small"
+
+        android:elevation="@dimen/margin_mid"
+        android:backgroundTint="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_medium">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_ice_cream" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_menu"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textSize="@dimen/text_medium_size"
+                android:textColor="@color/text_color"
+                />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_toRightOf="@id/iv_menu"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:textSize="@dimen/text_medium_size"
+                android:textColor="@color/text_color"
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

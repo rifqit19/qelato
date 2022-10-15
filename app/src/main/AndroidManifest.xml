@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Qelato">
         <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailMenuActivity"
             android:exported="false" />
         <activity

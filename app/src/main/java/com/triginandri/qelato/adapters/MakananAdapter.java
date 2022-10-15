@@ -15,43 +15,44 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.triginandri.qelato.DetailActivity;
 import com.triginandri.qelato.R;
 import com.triginandri.qelato.models.IceCream;
+import com.triginandri.qelato.models.Makanan;
 
 import java.util.List;
 
-public class IceCreamAdapter extends RecyclerView.Adapter<IceCreamAdapter.MyViewHolder> {
+public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.MyViewHolder> {
 
-    public IceCreamAdapter(List<IceCream> iceCreamList) {
-        this.iceCreamList = iceCreamList;
+    public MakananAdapter(List<Makanan> makananList) {
+        this.makananList = makananList;
     }
 
-    List<IceCream> iceCreamList;
+    List<Makanan> makananList;
 
     @NonNull
     @Override
-    public IceCreamAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MakananAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View iceCreamView = layoutInflater.inflate(R.layout.menu_item,null);
+        View iceCreamView = layoutInflater.inflate(R.layout.menu_item2,null);
         MyViewHolder viewHolder = new MyViewHolder(iceCreamView);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull IceCreamAdapter.MyViewHolder holder, int position) {
-        IceCream iceCream = iceCreamList.get(position);
+    public void onBindViewHolder(@NonNull MakananAdapter.MyViewHolder holder, int position) {
+        Makanan makanan = makananList.get(position);
 
-        holder.tv_name.setText(iceCream.getName());
-        holder.tv_price.setText("Rp. "+iceCream.getPrice());
-        holder.iv_menu.setImageResource(iceCream.getImage());
+        holder.tv_name.setText(makanan.getNama());
+        holder.tv_price.setText("Rp. " + makanan.getHarga());
+        holder.iv_menu.setImageResource(makanan.getGambar());
         holder.cv_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), DetailActivity.class);
-                i.putExtra("name", iceCream.getName());
-                i.putExtra("price", iceCream.getPrice());
-                i.putExtra("image", iceCream.getImage());
-                i.putExtra("desc", iceCream.getDescription());
+                i.putExtra("name", makanan.getNama());
+                i.putExtra("price", makanan.getHarga());
+                i.putExtra("image", makanan.getGambar());
+                i.putExtra("desc", makanan.getDeskripsi());
                 view.getContext().startActivity(i);
             }
         });
@@ -59,7 +60,7 @@ public class IceCreamAdapter extends RecyclerView.Adapter<IceCreamAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return iceCreamList.size();
+        return makananList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

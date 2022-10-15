@@ -4,15 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailMenuActivity">
+    tools:context=".DetailMenuActivity"
+    android:background="@color/super_light_pink"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detail menu"
-        android:textSize="@dimen/txt_big"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/dark_pink"
+        android:elevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:src="@drawable/place_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_detail"
+        app:layout_constraintHorizontal_bias="0.496"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/iv_detail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/custom_rectangel_dash"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:elevation="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
+        >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_mid"
+            android:textColor="@color/text_color"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_medium"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="@dimen/margin_extra_small"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_mid"
+            android:textColor="@color/dark_pink"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="-"/>
+
+
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="2"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+<!--        -->
+<!--    </LinearLayout>-->
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
